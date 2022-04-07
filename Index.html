@@ -1,0 +1,75 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <h3>Eric Hirsch 608 Assignment 5</h3>
+
+    <script type="text/javascript">
+
+        function reverseString(str) {
+            var splitString = str.split("");
+            var reverseArray = splitString.reverse();
+            var joinArray = reverseArray.join("");
+            var str;
+            str = joinArray;
+
+            return (str);
+        }
+
+        function calc2() {
+            var t = document.getElementById("target2");
+            t.innerHTML = reverseString(document.getElementById('rev').value);
+        }
+
+        function xtbl(tbl) {
+
+            var data = [tbl * 1, tbl * 2, tbl * 3, tbl * 4, tbl * 5, tbl * 6, tbl * 7, tbl * 8, tbl * 9, tbl * 10, tbl * 11, tbl * 12, tbl * 13, tbl * 14, tbl * 15, tbl * 16, tbl * 17, tbl * 18, tbl * 19, tbl * 20 ];
+
+            var myTable = "<table><tr>";
+
+            var perrow = 4;
+            data.forEach((value, i) => {
+                myTable += `<td>&nbsp;${value}&nbsp;</td>`;
+
+                var next = i + 1;
+                if (next % perrow == 0 && next != data.length) { myTable += "</tr><tr>"; }
+            });
+
+            myTable += "</tr></table>";
+            document.getElementById("target3").innerHTML = myTable;
+        }
+
+        function calc3() {
+            var t = document.getElementById("target3");
+            xtbl(document.getElementById('tbl').value);
+        }
+    </script>
+
+    <h4>The button below will reverse any string:</h4>
+    <p>
+        <input id="rev">
+        <input type="button" value="reverse" onClick="calc2();">
+    </p>
+    <p>
+
+    </p>
+    <h4>The button below will produce a table with multiples of the integer you enter:</h4>
+    <p>
+        <input id="tbl">
+        <input type="button" value="table" onClick="calc3();">
+    </p>
+
+    <div id="target"></div>
+    <div id="target2"></div>
+
+    <div id="target3"></div>
+
+    <script type="text/javascript" src="other_script.js"></script>
+
+    <script type="text/javascript">document.write(myScript());</script>
+
+</body>
+</html>
+    
